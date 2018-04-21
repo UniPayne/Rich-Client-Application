@@ -72,60 +72,140 @@
 		
 		---
 		class: center, middle
-
-		
 		# Sprachfeatures
-
+		---
+		
+		# 'let' und 'const'
+		<hr />
+				
+		<h3><i>let:</i></h3>
+		'let'- sind den ehemaligen 'var'-Variablen sehr ähnlich. Der einzige Unterschied liegt darin, dass die Lebensdauer dem block-scope, und nicht dem funktions-scope entspricht.
+		
+		<h3><i>const:</i></h3>
+		'const'-Variablen erlauben den Einsatz von konstanten Variablen in JavaScript.
+		
+		
+		???
+		- Im Prinzip sind beide Typen nur Erweiterungen zum vorherigen Datentypen 'var'.
+		
+		- 'let' umfasst eine Variablenlebensdauer von dem Block anstelle der Funktion. Dies macht nur bei nicht globalen Variablen einen Unterschied.
+		
+		- 'const' erlaubt das Deklarieren von konstanten Variablen. Dies war früher nur über aufwendige, selbst erstellte Objekte möglich.
+		
 		---
 
-		# 'Let' und 'const'
+		# Codebeispiel - 'let' und 'const'
 		<hr />
+		<h2>Beispiel: let</h2>
+		```javascript
+		let name = 'Tiger'
+		```
+		
+		<h2>Beispiel: const</h2>
+		```javascript
+		const name = 'Loewe'
+		```
 		---
 
-		# Codebeispiel - 'Let' und 'const'
+		# 'Arrow' - Funktionen
 		<hr />
-		---
-
-		# 'Arrow Funktionen
-		<hr />
-		---
-
-		# Codebeispiel
-		<hr />
+		- Gekennzeichnet mit dem Pfeil - Symbol (=>).
+		- Zur Verkürzung von anonymen Funktionen
+		- Syntax variiert in Abhängigkeit von folgenden Faktoren:
+			- Anzahl Argumente
+			- Implizites <i>return</i> Statement
+			
+		<h2>Codebeispiel:</h2>
+		```javascript
+		let array = [1,2,3,4,5,6,7,8,9,10,11]
+		
+		//Schreibweise in ES5
+		var groesserFuenf = array.filter(function (num) {
+		return num > 5
+		})
+		
+		//Schreibweise in ES6
+		let groesserFuenf= array.filter(num => num > 5)
+		```
+		
 		---
 
 		# Default Parameter
 		<hr />
+		
+		In ES6 hat man die Möglichkeit Default Paramenter, schnell und einfach, anzulegen.
+		<h2>Codebeispiel:</h2>
+		```javascript
+		function neuerStudent(vorName, nachName, matrNr = 'xxxxx') {
+			//code...
+		}
+		```
+		In dem obrigen Beispiel wird das 'xxxxx' als default matrNr mitgegeben, wenn keine matrNr beim Funktionsaufruf angegeben wird.
 		---
 
-		# Codebeispiel
+		# Destruktrierung
 		<hr />
-		---
+		- Ermöglicht das extrahieren von Daten aus
+			- Arrays
+			- Objekten
 
-		# Destructern
-		<hr />
+			
 		---
-
-		# Codebeispiel
-		<hr />
-		---
-
-		# Enhanced object literals
-		<hr />
-		---
-
-		# Codebeispiel
-		<hr />
+		
+		# Destruktrierung - Arrays I 
+		<h2>Einfaches Beispiel:</h2>
+		```javascript
+		let bla = [1,2]
+		
+		//ohne Destruktrierung
+		let eins = bla[0]
+		let zwei = bla[1]
+		
+		//mit Destruktrierung
+		let [eins,zwei] = bla
+		```
+		Hier sieht man, dass man allein bei der Sache viel Zeit und Code sparen könnte.
 		
 		---
-
-		# Template literals
+		
+		# Destruktrierung - Arrays II
 		<hr />
+		<h2> Variablen austauschen</h2>
+		```javascript
+		let a = 1
+		let b = 3
+		
+		[a,b] = [b,a]
+		
+		```
+		und vieles mehr...
+		
+		???
+		https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung
 		
 		---
+		# Destrukturierung - Objekte
+		<h2>Einfaches Beispiel</h2>
+		
+		```javascript
+		let o = {p: 42, q: true};
+		let {p, q} = o;
 
-		# Codebeispiel
-		<hr />
+		console.log(p); // 42
+		console.log(q); // true 
+
+		// Weise neue Variablennamen zu
+		let {p: foo, q: bar} = o;
+
+		console.log(foo); // 42
+		console.log(bar); // true  
+		```
+		---
+		
+		#Quellenangabe
+		- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung
+		- https://zellwk.com/blog/es6/
+		
 		---
 		class: center, middle
 		
